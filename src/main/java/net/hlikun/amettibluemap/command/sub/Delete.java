@@ -16,11 +16,15 @@ public class Delete {
             String name = args[1];
             UUID marker = Util.getMarkerUUIDFromMarkerName(name);
 
-            // マーカのデータをnullに設定 = マーカーを削除
-            Markers.setPOIMarkerData(marker, null);
+            if (marker == null) {
+                p.sendMessage(Util.prefix() + ChatColor.RED + "「" +  name + "」というマーカーは存在しません。");
+            } else {
+                // マーカのデータをnullに設定 = マーカーを削除
+                Markers.setPOIMarkerData(marker, null);
 
-            // メッセージを送信
-            p.sendMessage(Util.prefix() + ChatColor.RED + "指定したマーカー「" +  name + "」を削除しました。");
+                // メッセージを送信
+                p.sendMessage(Util.prefix() + ChatColor.RED + "指定したマーカー「" +  name + "」を削除しました。");
+            }
         }
     }
 }
