@@ -1,5 +1,6 @@
 package net.hlikun.amettibluemap;
 
+import net.hlikun.amettibluemap.tools.Util;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -8,7 +9,7 @@ import java.io.File;
 public final class Main extends JavaPlugin {
     private static JavaPlugin plugin;
 
-    // YamlFile
+    // Yaml file
     private static File markerFile;
     private static YamlConfiguration markers;
 
@@ -19,7 +20,7 @@ public final class Main extends JavaPlugin {
 
         plugin = this;
 
-        // YamlFile
+        // Yaml file
         markerFile = new File(getDataFolder(), "marker.yml");
         markers = YamlConfiguration.loadConfiguration(markerFile);
 
@@ -31,8 +32,13 @@ public final class Main extends JavaPlugin {
         // Plugin shutdown logic
         super.onDisable();
 
+        // save yaml file
+        Util.saveFile();
+
         getLogger().info("プラグインは正常に停止しました。");
     }
+
+    // ========== getter ==========
 
     public static JavaPlugin getPlugin() {
         return plugin;
