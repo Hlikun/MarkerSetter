@@ -12,7 +12,7 @@ public class Markers {
     }
 
     public static void setPOIMarkerName(UUID marker, String name) {
-        Main.getMarkers().get("markers.POIMarkers." + marker + ".name", name);
+        Main.getMarkers().set("markers.POIMarkers." + marker + ".name", name);
     }
 
     // Marker location
