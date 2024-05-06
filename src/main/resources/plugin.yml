@@ -11,4 +11,4 @@ commands:
   marker:
     description: Marker set command.
     usage: /<command>
-    permission: AmettiBlueMap.Set
+    permission: AmettiBlueMap.Marker
