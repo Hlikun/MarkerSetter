@@ -1,0 +1,10 @@
+name: AmettiBlueMap
+version: '${project.version}'
+main: net.hlikun.amettibluemap.AmettiBlueMap
+api-version: '1.20'
+prefix: AmettiBlueMap
+load: STARTUP
+authors: [hi_kun_JPN]
+description: ametti server bluemap marker plugin.
+website: https://ametti-minecraft.jimdosite.com/
+commands:
