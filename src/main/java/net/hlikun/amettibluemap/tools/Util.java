@@ -5,7 +5,7 @@ import net.hlikun.amettibluemap.Main;
 import java.io.IOException;
 
 public class Util {
-    public void saveFile() {
+    public static void saveFile() {
         try {
             Main.getMarkers().save(Main.getMarkerFile());
         } catch (IOException e) {
