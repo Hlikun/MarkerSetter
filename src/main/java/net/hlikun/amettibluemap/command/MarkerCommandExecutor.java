@@ -17,14 +17,13 @@ public class MarkerCommandExecutor implements CommandExecutor {
         if (!(sender instanceof Player p)) {
             sender.sendMessage("コマンドを実行できるのはプレイヤーのみです。");
         } else {
-            switch (args.length) {
-                case 0 -> p.sendMessage(Util.prefix() + ChatColor.RED + "サブコマンドがありません。「/marker help」でコマンド一覧が確認できます。");
-                case 1 -> {
-                    switch (args[0]) {
-                        case "create" -> new Create(p, args);
-                        case "delete" -> new Delete(p, args);
-                        case "help" -> new Help(p);
-                    }
+            if (args.length == 0) {
+                p.sendMessage(Util.prefix() + ChatColor.RED + "サブコマンドがありません。「/marker help」でコマンド一覧が確認できます。");
+            } else {
+                switch (args[0]) {
+                    case "create" -> new Create(p, args);
+                    case "delete" -> new Delete(p, args);
+                    case "help" -> new Help(p);
                 }
             }
         }
