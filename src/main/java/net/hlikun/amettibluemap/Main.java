@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
-public final class AmettiBlueMap extends JavaPlugin {
+public final class Main extends JavaPlugin {
     private static JavaPlugin plugin;
 
     // YamlFile

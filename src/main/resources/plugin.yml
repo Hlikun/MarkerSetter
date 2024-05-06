@@ -1,6 +1,6 @@
 name: AmettiBlueMap
 version: '${project.version}'
-main: net.hlikun.amettibluemap.AmettiBlueMap
+main: net.hlikun.amettibluemap.Main
 api-version: '1.20'
 prefix: AmettiBlueMap
 load: STARTUP

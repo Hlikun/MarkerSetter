@@ -1,15 +1,15 @@
 package net.hlikun.amettibluemap.tools;
 
-import net.hlikun.amettibluemap.AmettiBlueMap;
+import net.hlikun.amettibluemap.Main;
 
 import java.io.IOException;
 
 public class Util {
     public void saveFile() {
         try {
-            AmettiBlueMap.getMarkers().save(AmettiBlueMap.getMarkerFile());
+            Main.getMarkers().save(Main.getMarkerFile());
         } catch (IOException e) {
-            AmettiBlueMap.getPlugin().getLogger().warning("markerの保存中にエラーが発生しました。");
+            Main.getPlugin().getLogger().warning("markerの保存中にエラーが発生しました。");
         }
     }
 }
