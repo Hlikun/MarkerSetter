@@ -1,5 +1,6 @@
 package net.hlikun.amettibluemap;
 
+import net.hlikun.amettibluemap.bluemap.BlueMapManager;
 import net.hlikun.amettibluemap.command.MarkerCommandCompleter;
 import net.hlikun.amettibluemap.command.MarkerCommandExecutor;
 import net.hlikun.amettibluemap.tools.Util;
@@ -30,6 +31,9 @@ public final class Main extends JavaPlugin {
         // command
         Objects.requireNonNull(getCommand("marker")).setExecutor(new MarkerCommandExecutor());
         Objects.requireNonNull(getCommand("marker")).setTabCompleter(new MarkerCommandCompleter());
+
+        // BlueMapを管理するクラス
+        new BlueMapManager(plugin);
 
         getLogger().info("プラグインは正常に起動しました。");
     }
