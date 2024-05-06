@@ -8,3 +8,7 @@ authors: [hi_kun_JPN]
 description: ametti server bluemap marker plugin.
 website: https://ametti-minecraft.jimdosite.com/
 commands:
+  marker:
+    description: Marker set command.
+    usage: /<command>
+    permission: AmettiBlueMap.Set

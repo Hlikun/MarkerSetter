@@ -1,10 +1,13 @@
 package net.hlikun.amettibluemap;
 
+import net.hlikun.amettibluemap.command.MarkerCommandCompleter;
+import net.hlikun.amettibluemap.command.MarkerCommandExecutor;
 import net.hlikun.amettibluemap.tools.Util;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.util.Objects;
 
 public final class Main extends JavaPlugin {
     private static JavaPlugin plugin;
@@ -23,6 +26,10 @@ public final class Main extends JavaPlugin {
         // Yaml file
         markerFile = new File(getDataFolder(), "marker.yml");
         markers = YamlConfiguration.loadConfiguration(markerFile);
+
+        // command
+        Objects.requireNonNull(getCommand("marker")).setExecutor(new MarkerCommandExecutor());
+        Objects.requireNonNull(getCommand("marker")).setTabCompleter(new MarkerCommandCompleter());
 
         getLogger().info("プラグインは正常に起動しました。");
     }
