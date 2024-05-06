@@ -14,7 +14,7 @@ public class Create {
         if (args.length == 1) {
             p.sendMessage(Util.prefix() + ChatColor.RED + "サブコマンドが不正です。正しいコマンドは「/marker create <マーカー名>」です。");
         } else {
-            // マーカー名とマーカーのUUID
+            // マーカー名
             String markerName = args[1];
 
             // 名前が既に存在しているか確認
