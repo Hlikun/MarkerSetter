@@ -1,7 +1,7 @@
-package net.hlikun.amettibluemap.command.sub;
+package net.hlikun.markersetter.command.sub;
 
-import net.hlikun.amettibluemap.tools.Markers;
-import net.hlikun.amettibluemap.tools.Util;
+import net.hlikun.markersetter.tools.Markers;
+import net.hlikun.markersetter.tools.Util;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;

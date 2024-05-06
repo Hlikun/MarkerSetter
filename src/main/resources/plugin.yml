@@ -1,14 +1,13 @@
-name: AmettiBlueMap
+name: MarkerSetter
 version: '${project.version}'
-main: net.hlikun.amettibluemap.Main
+main: net.hlikun.markersetter.Main
 api-version: '1.20'
-prefix: AmettiBlueMap
+prefix: MarkerSetter
 load: STARTUP
 authors: [hi_kun_JPN]
-description: ametti server bluemap marker plugin.
-website: https://ametti-minecraft.jimdosite.com/
+description: BlueMap marker set plugin.
 commands:
   marker:
     description: Marker set command.
     usage: /<command>
-    permission: AmettiBlueMap.Marker
+    permission: MarkerSetter.Marker

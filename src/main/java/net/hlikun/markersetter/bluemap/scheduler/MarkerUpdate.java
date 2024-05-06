@@ -1,11 +1,11 @@
-package net.hlikun.amettibluemap.bluemap.scheduler;
+package net.hlikun.markersetter.bluemap.scheduler;
 
 import de.bluecolored.bluemap.api.BlueMapAPI;
 import de.bluecolored.bluemap.api.BlueMapMap;
 import de.bluecolored.bluemap.api.markers.MarkerSet;
 import de.bluecolored.bluemap.api.markers.POIMarker;
-import net.hlikun.amettibluemap.tools.Markers;
-import net.hlikun.amettibluemap.tools.Util;
+import net.hlikun.markersetter.tools.Markers;
+import net.hlikun.markersetter.tools.Util;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.scheduler.BukkitRunnable;

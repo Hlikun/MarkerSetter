@@ -1,7 +1,7 @@
-package net.hlikun.amettibluemap.bluemap;
+package net.hlikun.markersetter.bluemap;
 
 import de.bluecolored.bluemap.api.BlueMapAPI;
-import net.hlikun.amettibluemap.bluemap.scheduler.MarkerUpdate;
+import net.hlikun.markersetter.bluemap.scheduler.MarkerUpdate;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BlueMapManager {

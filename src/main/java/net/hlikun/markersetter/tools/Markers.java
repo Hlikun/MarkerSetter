@@ -1,6 +1,6 @@
-package net.hlikun.amettibluemap.tools;
+package net.hlikun.markersetter.tools;
 
-import net.hlikun.amettibluemap.Main;
+import net.hlikun.markersetter.Main;
 import org.bukkit.Location;
 
 import java.util.UUID;

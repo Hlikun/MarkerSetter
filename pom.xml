@@ -5,18 +5,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>hlikun.net</groupId>
-  <artifactId>AmettiBlueMap</artifactId>
+  <artifactId>MarkerSetter</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
-  <name>AmettiBlueMap</name>
+  <name>MarkerSetter</name>
+  <description>BlueMap marker set plugin.</description>
 
-	<description>ametti server bluemap marker plugin.</description>
 	<properties>
     <java.version>17</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-	<url>https://ametti-minecraft.jimdosite.com/</url>
+	</properties>
 
 	<build>
     <plugins>

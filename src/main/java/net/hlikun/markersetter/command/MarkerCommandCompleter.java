@@ -1,7 +1,7 @@
-package net.hlikun.amettibluemap.command;
+package net.hlikun.markersetter.command;
 
-import net.hlikun.amettibluemap.tools.Markers;
-import net.hlikun.amettibluemap.tools.Util;
+import net.hlikun.markersetter.tools.Markers;
+import net.hlikun.markersetter.tools.Util;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;

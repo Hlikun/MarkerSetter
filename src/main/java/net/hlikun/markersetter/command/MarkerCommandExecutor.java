@@ -1,10 +1,10 @@
-package net.hlikun.amettibluemap.command;
+package net.hlikun.markersetter.command;
 
 
-import net.hlikun.amettibluemap.command.sub.Create;
-import net.hlikun.amettibluemap.command.sub.Delete;
-import net.hlikun.amettibluemap.command.sub.Help;
-import net.hlikun.amettibluemap.tools.Util;
+import net.hlikun.markersetter.command.sub.Create;
+import net.hlikun.markersetter.command.sub.Delete;
+import net.hlikun.markersetter.command.sub.Help;
+import net.hlikun.markersetter.tools.Util;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
