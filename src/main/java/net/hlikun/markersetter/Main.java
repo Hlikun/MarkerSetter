@@ -3,6 +3,7 @@ package net.hlikun.markersetter;
 import net.hlikun.markersetter.bluemap.BlueMapManager;
 import net.hlikun.markersetter.command.MarkerCommandCompleter;
 import net.hlikun.markersetter.command.MarkerCommandExecutor;
+import net.hlikun.markersetter.tools.Configs;
 import net.hlikun.markersetter.tools.Util;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,6 +18,10 @@ public final class Main extends JavaPlugin {
     private static File markerFile;
     private static YamlConfiguration markers;
 
+    // config file
+    private static File configFile;
+    private static YamlConfiguration configs;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -27,6 +32,10 @@ public final class Main extends JavaPlugin {
         // Yaml file
         markerFile = new File(getDataFolder(), "marker.yml");
         markers = YamlConfiguration.loadConfiguration(markerFile);
+
+        // config file
+        configFile = new File(getDataFolder(), "config.yml");
+        configs = YamlConfiguration.loadConfiguration(configFile);
 
         // command
         Objects.requireNonNull(getCommand("marker")).setExecutor(new MarkerCommandExecutor());
@@ -61,5 +70,13 @@ public final class Main extends JavaPlugin {
 
     public static YamlConfiguration getMarkers() {
         return markers;
+    }
+
+    public static File getConfigFile() {
+        return configFile;
+    }
+
+    public static YamlConfiguration getConfigs() {
+        return configs;
     }
 }

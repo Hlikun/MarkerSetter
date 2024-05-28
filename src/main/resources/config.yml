@@ -1,0 +1,11 @@
+# 絶対に変更しないでください。
+config-version: 1.0
+
+# マーカーをアップデートする間隔(秒)
+marker-update-interval: 30
+
+# リストに表示されるマーカー名
+marker-list-name: "MarkerSetter"
+
+# POIMarkerの表示範囲
+poi-marker-range: 1000
