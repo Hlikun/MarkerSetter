@@ -18,7 +18,6 @@ public final class Main extends JavaPlugin {
     private static YamlConfiguration markers;
 
     // config file
-    private static File configFile;
     private static YamlConfiguration configs;
 
     @Override
@@ -33,8 +32,8 @@ public final class Main extends JavaPlugin {
         markers = YamlConfiguration.loadConfiguration(markerFile);
 
         // config file
-        configFile = new File(getDataFolder(), "config.yml");
-        configs = YamlConfiguration.loadConfiguration(configFile);
+        configs = (YamlConfiguration) getConfig();
+        saveDefaultConfig();
 
         // command
         Objects.requireNonNull(getCommand("marker")).setExecutor(new MarkerCommandExecutor());
@@ -69,10 +68,6 @@ public final class Main extends JavaPlugin {
 
     public static YamlConfiguration getMarkers() {
         return markers;
-    }
-
-    public static File getConfigFile() {
-        return configFile;
     }
 
     public static YamlConfiguration getConfigs() {

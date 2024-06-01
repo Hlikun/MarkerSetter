@@ -7,6 +7,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class BlueMapManager {
     public BlueMapManager(JavaPlugin plugin) {
-        BlueMapAPI.onEnable(blueMapAPI -> new MarkerUpdate(blueMapAPI).runTaskTimer(plugin, 0, Configs.getMarkerUpdateInterval()));
+        BlueMapAPI.onEnable(blueMapAPI -> new MarkerUpdate(blueMapAPI).runTaskTimer(plugin, 0, Configs.getMarkerUpdateInterval() * 20L));
     }
 }
