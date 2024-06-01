@@ -3,7 +3,6 @@ package net.hlikun.markersetter;
 import net.hlikun.markersetter.bluemap.BlueMapManager;
 import net.hlikun.markersetter.command.MarkerCommandCompleter;
 import net.hlikun.markersetter.command.MarkerCommandExecutor;
-import net.hlikun.markersetter.tools.Configs;
 import net.hlikun.markersetter.tools.Util;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
