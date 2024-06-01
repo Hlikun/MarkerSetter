@@ -14,4 +14,8 @@ public class Configs {
     public static String getMarketListName() {
         return Main.getConfigs().getString("marker-list-name");
     }
+
+    public static int getPoiMarkerRange() {
+        return Main.getConfigs().getInt("marker-display-range");
+    }
 }

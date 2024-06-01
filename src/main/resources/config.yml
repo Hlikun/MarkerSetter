@@ -8,4 +8,4 @@ marker-update-interval: 30
 marker-list-name: "MarkerSetter"
 
 # POIMarkerの表示範囲
-poi-marker-range: 1000
+marker-display-range: 1000
