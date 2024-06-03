@@ -13,7 +13,7 @@ public class DeleteHTML {
         if (args.length == 1) {
             p.sendMessage(Util.prefix() + ChatColor.RED + "サブコマンドが不正です。正しいコマンドは「/marker delete html <マーカー名>」です。");
         } else {
-            String name = args[1];
+            String name = args[2];
             UUID marker = Util.getHTMLMarkerUUIDFromMarkerName(name);
 
             if (marker == null) {
