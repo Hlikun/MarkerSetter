@@ -2,6 +2,7 @@ package net.hlikun.markersetter.bluemap.scheduler;
 
 import de.bluecolored.bluemap.api.BlueMapAPI;
 import de.bluecolored.bluemap.api.BlueMapMap;
+import de.bluecolored.bluemap.api.markers.HtmlMarker;
 import de.bluecolored.bluemap.api.markers.MarkerSet;
 import de.bluecolored.bluemap.api.markers.POIMarker;
 import net.hlikun.markersetter.tools.Configs;
@@ -29,8 +30,21 @@ public class MarkerUpdate extends BukkitRunnable {
                 .label(markerListName)
                 .build();
 
-        // 全てのマーカーをマップに設定
-        for (UUID uuid : Util.getMarkers()) {
+        // 全てのPOIMarkerをマップに設定
+        setPOIMarker(markerSet);
+        // 全てのHTMLMarkerをマップに設定
+        setHTMLMarker(markerSet);
+
+        blueMapAPI.getWorld(Bukkit.getWorld("world")).ifPresent(world -> {
+            for (BlueMapMap map : world.getMaps()) {
+                map.getMarkerSets().put(markerListName, markerSet);
+            }
+        });
+    }
+
+    // 全てのPOIMarkerをマップに設定するメソッド
+    private void setPOIMarker(MarkerSet markerSet) {
+        for (UUID uuid : Util.getPOIMarkers()) {
             String name = Markers.getPOIMarkerName(uuid);
             Location loc = Markers.getPOIMarkerLocation(uuid);
 
@@ -39,12 +53,19 @@ public class MarkerUpdate extends BukkitRunnable {
             // Setに追加
             markerSet.put(name, poiMarker);
         }
+    }
 
-        blueMapAPI.getWorld(Bukkit.getWorld("world")).ifPresent(world -> {
-            for (BlueMapMap map : world.getMaps()) {
-                map.getMarkerSets().put(markerListName, markerSet);
-            }
-        });
+    // 全てのHTMLMarkerをマップに設定するメソッド
+    private void setHTMLMarker(MarkerSet markerSet) {
+        for (UUID uuid : Util.getHTMLMarkers()) {
+            String name = Markers.getHTMLMarkerName(uuid);
+            Location loc = Markers.getHTMLMarkerLocation(uuid);
+
+            // HTMLMarkerを作成
+            HtmlMarker poiMarker = createHTMLMarker(name, loc);
+            // Setに追加
+            markerSet.put(name, poiMarker);
+        }
     }
 
     // POIMarkerを作成するメソッド
@@ -54,6 +75,20 @@ public class MarkerUpdate extends BukkitRunnable {
         double z = loc.getZ();
 
         return POIMarker.builder()
+                .label(name)
+                .position(x, y, z)
+                .maxDistance(markerDisplayRange)
+                .build();
+    }
+
+    // HTMLMarkerを作成するメソッド
+    private HtmlMarker createHTMLMarker(String name, Location loc) {
+        double x = loc.getX();
+        double y = loc.getY();
+        double z = loc.getZ();
+
+        return HtmlMarker.builder()
+                .html("<span style=\"font-weight:bold; color:white;\">" + name + "</span>")
                 .label(name)
                 .position(x, y, z)
                 .maxDistance(markerDisplayRange)

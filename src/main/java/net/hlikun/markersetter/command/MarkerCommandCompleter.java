@@ -19,14 +19,29 @@ public class MarkerCommandCompleter implements TabCompleter {
                 list.add("create");
                 list.add("delete");
                 list.add("help");
+                list.add("save");
             }
             case 2 -> {
+                switch (args[0]) {
+                    case "create", "delete" -> {
+                        list.add("poi");
+                        list.add("html");
+                    }
+                }
+            }
+            case 3 -> {
                 // サブコマンドが「delete」だった場合全てのmarkerの名前をlistに追加する
                 if (args[0].equals("delete")) {
-                    Util.getMarkers().forEach(uuid -> {
-                        String name = Markers.getPOIMarkerName(uuid);
-                        list.add(name);
-                    });
+                    switch (args[1]) {
+                        case "poi" -> Util.getPOIMarkers().forEach(uuid -> {
+                            String name = Markers.getPOIMarkerName(uuid);
+                            list.add(name);
+                        });
+                        case "html" -> Util.getHTMLMarkers().forEach(uuid -> {
+                            String name = Markers.getHTMLMarkerName(uuid);
+                            list.add(name);
+                        });
+                    }
                 }
             }
         }

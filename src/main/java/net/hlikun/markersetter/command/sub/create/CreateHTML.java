@@ -1,4 +1,4 @@
-package net.hlikun.markersetter.command.sub;
+package net.hlikun.markersetter.command.sub.create;
 
 import net.hlikun.markersetter.tools.Markers;
 import net.hlikun.markersetter.tools.Util;
@@ -8,11 +8,11 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public class Create {
-    public Create(Player p, String[] args) {
+public class CreateHTML {
+    public CreateHTML(Player p, String[] args) {
         // marker create <マーカー名>
         if (args.length == 1) {
-            p.sendMessage(Util.prefix() + ChatColor.RED + "サブコマンドが不正です。正しいコマンドは「/marker create <マーカー名>」です。");
+            p.sendMessage(Util.prefix() + ChatColor.RED + "サブコマンドが不正です。正しいコマンドは「/marker create html <マーカー名>」です。");
         } else {
             // マーカー名
             String markerName = args[1];
@@ -26,19 +26,19 @@ public class Create {
                 Location loc = p.getLocation();
 
                 // 名前を位置を設定
-                Markers.setPOIMarkerName(markerUUID, markerName);
-                Markers.setPOIMarkerLocation(markerUUID, loc);
+                Markers.setHTMLMarkerName(markerUUID, markerName);
+                Markers.setHTMLMarkerLocation(markerUUID, loc);
 
                 // メッセージを送信
-                p.sendMessage(Util.prefix() + ChatColor.GREEN + "現在立っている位置にPOIMarkerを作成しました。");
+                p.sendMessage(Util.prefix() + ChatColor.GREEN + "現在立っている位置にHTMLMarkerを作成しました。");
             }
         }
     }
 
-    // 名前が既に存在するか確認するメソッド
+    // HTMLMarkerの名前が既に存在するか確認するメソッド
     private boolean isArgumentAlreadyExists(String name) {
-        for (UUID marker : Util.getMarkers()) {
-            String valueName = Markers.getPOIMarkerName(marker);
+        for (UUID marker : Util.getHTMLMarkers()) {
+            String valueName = Markers.getHTMLMarkerName(marker);
 
             if (name.equalsIgnoreCase(valueName)) {
                 return true;
