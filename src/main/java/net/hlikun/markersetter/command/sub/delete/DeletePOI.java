@@ -14,7 +14,7 @@ public class DeletePOI {
             p.sendMessage(Util.prefix() + ChatColor.RED + "サブコマンドが不正です。正しいコマンドは「/marker delete poi <マーカー名>」です。");
         } else {
             String name = args[2];
-            UUID marker = Util.getHTMLMarkerUUIDFromMarkerName(name);
+            UUID marker = Util.getPOIMarkerUUIDFromMarkerName(name);
 
             if (marker == null) {
                 p.sendMessage(Util.prefix() + ChatColor.RED + "「" +  name + "」というPOIマーカーは存在しません。");
