@@ -25,7 +25,6 @@ public class MarkerCommandExecutor implements CommandExecutor {
                     case "create" -> create(p, args);
                     case "delete" -> delete(p, args);
                     case "help" -> new Help(p);
-                    case "save" -> Util.saveFile();
                 }
             }
         }
