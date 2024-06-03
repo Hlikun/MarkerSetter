@@ -7,5 +7,5 @@ marker-update-interval: 30
 # リストに表示されるマーカー名
 marker-list-name: "MarkerSetter"
 
-# POIMarkerの表示範囲
+# Markerの表示範囲
 marker-display-range: 1000
