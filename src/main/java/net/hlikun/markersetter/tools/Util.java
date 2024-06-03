@@ -68,7 +68,7 @@ public class Util {
     @Nullable
     public static UUID getHTMLMarkerUUIDFromMarkerName(String name) {
         for (UUID marker : getHTMLMarkers()) {
-            String valueName = Markers.getPOIMarkerName(marker);
+            String valueName = Markers.getHTMLMarkerName(marker);
             if (name.equalsIgnoreCase(valueName)) return marker;
         }
         return null;
