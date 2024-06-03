@@ -15,7 +15,7 @@ public class CreatePOI {
             p.sendMessage(Util.prefix() + ChatColor.RED + "サブコマンドが不正です。正しいコマンドは「/marker create poi <マーカー名>」です。");
         } else {
             // マーカー名
-            String markerName = args[1];
+            String markerName = args[2];
 
             // 名前が既に存在しているか確認
             if (isArgumentAlreadyExists(markerName)) {
